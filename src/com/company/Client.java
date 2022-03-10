@@ -1,47 +1,47 @@
 package com.company;
 
 public class Client {
-
     private String name;
-    private String peakItemClient;
-    private int amount;
+    private String peacItemClient;
+    private int amountOfItem;
 
-    public Client(String name, String peakItemClient, int amount) {
-        this.name = name;
-        this.peakItemClient = peakItemClient;
-        this.amount = amount;
+
+    private Client (){
+
     }
 
-    public String getName() {
+
+    public Client(String name, String peacItemClient, int amountOfItem){
+        this.name = name;
+        this.peacItemClient = peacItemClient;
+        this.amountOfItem = amountOfItem;
+
+    }
+
+    public String getName (){
         return name;
     }
-
-    public void setName(String name) {
+    public void setName ( String name){
         this.name = name;
     }
-
-    public String getPeakItemClient() {
-        return peakItemClient;
+    public String getPeacItemClient (){
+        return peacItemClient;
     }
-
-    public void setPeakItemClient(String peakItemClient) {
-        this.peakItemClient = peakItemClient;
+    public void setPeacItemClient(String peacItemClient){
+        this.peacItemClient = peacItemClient;
     }
-
-    public int getAmount() {
-        return amount;
+    public int getAmountOfItem (){
+        return amountOfItem;
     }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setAmountOfItem(int amountOfItem){
+        this.amountOfItem = amountOfItem;
     }
-
     @Override
-    public String toString() {
-        return "Client{" +
-                "name='" + name + '\'' +
-                ", peakItemClient='" + peakItemClient + '\'' +
-                ", amount=" + amount +
-                '}';
+    public String toString (){
+        return "name: " + name +
+                ", купил: " + peacItemClient +
+                ", кол-во: " + amountOfItem;
     }
+
+
 }
