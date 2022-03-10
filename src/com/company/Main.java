@@ -71,8 +71,11 @@ public class Main {
         }
 
         arrayList.removeIf(x ->x.getAge()<18);
-        soutList((ArrayList<Student>) arrayList);
+//        soutList((ArrayList<Student>) arrayList);
 
+        for (Student student : arrayList) {
+            System.out.println(student);
+        }
 
 
 //        soutList(java);
