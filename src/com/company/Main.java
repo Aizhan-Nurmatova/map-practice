@@ -1,48 +1,25 @@
 package com.company;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        List<Client> clients = new LinkedList<>(List.of(new Client("Maks", "Samsung", 4),
-                new Client("Jeny", "Toshiba", 15),
-                new Client("Tom", "Panasonic", 8),
-                new Client("Frenk", "MacBook", 3),
-                new Client("Battery", "Lenovo", 1),
-                new Client("Henks", "Acer", 7),
-                new Client("Aleksei", "Hp", 18),
-                new Client("Sasha", "Sony", 4)));
+        User user = new User("Beksultan", "Mamatkadyr uulu");
+        Map<User, BankAccount> bankHolder = Map.of(user, new BankAccount(20000),
+                new User("Aizhan", "Nurmatova"), new BankAccount(28976));
 
-        LinkedList<Client> startsABC = new LinkedList<>();
-        for (Client client : clients) {
-            if (client.getName().startsWith("A") || client.getName().startsWith("B") || client.getName().startsWith("C")) {
-                startsABC.add(client);
-            }
-        }
-        LinkedList<Client> clients1 = new LinkedList<>();
-        for (Client client : clients) {
-           if (client.getAmountOfItem() > 5){
-               clients1.add(client);
-           }
-        }
-
-          test(clients1);
- //       test(startsABC);
-    }
-    public static void test (List<Client> clients){
-        for (Client a : clients){
-            System.out.println(a);
-        }
-
+//        transaction(bankHolder, user, 15000);
+        transaction(bankHolder,user,15200);
 
     }
 
+    public static void transaction(Map<User, BankAccount> userBankAccountMap, User user, int sum) {
+        BankAccount bankAccount = userBankAccountMap.get(user);
+        int balance = bankAccount.getBalance();
+        bankAccount.takeMoney(sum);
+        System.out.printf("%s had %d money. \n%s took %d money. \nCurrent balance: %d",
+                user.getName(), balance, user.getName(), sum, bankAccount.getBalance());
+    }
 }
-
-
-
